@@ -4,7 +4,7 @@ import { LoaderWrapper } from './Loader.styled';
 export const Loader = () => {
   return (
     <LoaderWrapper>
-      <ThreeDots color="#034f84" height={70} width={80} />
+      <ThreeDots color="#034f84" height={88} width={80} />
     </LoaderWrapper>
   );
 };

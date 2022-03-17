@@ -25,6 +25,22 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
+export const changeContactName = createAsyncThunk(
+  'contacts/changeContactName',
+  async ({ id, value }) => {
+    const data = await contactsApi.changeContactName(id, value);
+    return data;
+  },
+);
+
+export const changeContactNumber = createAsyncThunk(
+  'contacts/changeContactNumber',
+  async ({ id, value }) => {
+    const data = await contactsApi.changeContactNumber(id, value);
+    return data;
+  },
+);
+
 // ======================= Без createAsyncThunk ==========================
 
 // import * as contactsApi from "services/contactsApi";

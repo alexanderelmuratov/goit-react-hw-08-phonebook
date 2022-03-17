@@ -5,8 +5,16 @@ export const GlobalStyle = createGlobalStyle`
   ${modernNormalize}
 
   html {
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
     scroll-behavior: smooth;
+  }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 
   body {

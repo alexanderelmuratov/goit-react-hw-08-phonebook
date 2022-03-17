@@ -3,19 +3,13 @@ import styled from 'styled-components';
 export const Form = styled.form`
   width: 320px;
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-radius: 5px;
 `;
-
-// export const FieldWrapper = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-// `;
 
 export const FormLabel = styled.label`
   display: flex;
@@ -40,7 +34,7 @@ export const SearchInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-  width: 140px;
+  width: 120px;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 5px;
