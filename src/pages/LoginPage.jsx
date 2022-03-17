@@ -4,7 +4,7 @@ import { Title } from 'components/App/App.styled';
 export const LoginPage = () => {
   return (
     <main>
-      <Title>Login</Title>
+      <Title>Enter youre account!</Title>
       <LoginForm />
     </main>
   );
