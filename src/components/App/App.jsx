@@ -2,7 +2,8 @@ import { lazy, Suspense } from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
 import { AppBar } from 'components/AppBar/AppBar';
 import { PublicRoute } from 'components/PublicRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
@@ -10,6 +11,7 @@ import { GlobalStyle } from './GlobalStyle';
 import { Container } from './App.styled';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import { getIsFetchingCurrentUser } from 'redux/auth/auth-selectors';
+import 'react-toastify/dist/ReactToastify.css';
 // import { Loader } from 'components/Loader/Loader';
 
 const HomePage = lazy(() =>
@@ -76,7 +78,8 @@ export const App = () => {
         )}
         
       </Container>
-      <Toaster position="top-right"/>
+      <ToastContainer style={{ fontSize: "18px" }} />
+      {/* <ToastContainer style={{ fontSize: "18px", fontStyle: "italic" }} /> */}
     </>    
   );
 };

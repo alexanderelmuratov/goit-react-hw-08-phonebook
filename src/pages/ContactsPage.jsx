@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
+// import toast from 'react-hot-toast';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { Loader } from 'components/Loader/Loader';
@@ -14,7 +16,6 @@ export const ContactsPage = () => {
   const loading = useSelector(getLoading);
   const error = useSelector(getError);  
   const dispatch = useDispatch();
-  console.log(contacts);
 
   useEffect(() => {
     dispatch(fetchContacts());

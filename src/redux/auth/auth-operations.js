@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -12,32 +13,36 @@ const token = {
   },
 };
 
-export const register = createAsyncThunk('auth/register', async credentials => {
+export const register = createAsyncThunk('auth/register', async (credentials, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
+    toast.success('You successfully signed up!');
     return data;
   } catch (error) {
-    console.log(error);
+    toast.error('Signup failed. Check your data!');
+    return thunkAPI.rejectWithValue();
   }
 });
 
-export const logIn = createAsyncThunk('auth/login', async credentials => {
+export const logIn = createAsyncThunk('auth/login', async (credentials, thunkAPI) => {
   try {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
+    toast.success('Welcome your contacts!');
     return data;
   } catch (error) {
-    console.log(error);
+    toast.error('Login failed. Check your data!');
+    return thunkAPI.rejectWithValue();
   }
 });
 
-export const logOut = createAsyncThunk('auth/logout', async () => {
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/users/logout');
     token.unset();
   } catch (error) {
-    console.log(error);
+    return thunkAPI.rejectWithValue();
   }
 });
 
@@ -56,7 +61,7 @@ export const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      console.log(error);
+      return thunkAPI.rejectWithValue();;
     }
   }
 );

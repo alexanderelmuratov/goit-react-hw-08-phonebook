@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
-// import EdiText from 'react-editext'
-import toast from 'react-hot-toast';
-import { MdContactPhone } from 'react-icons/md';
+import { toast } from 'react-toastify';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { MdClose, MdContactPhone } from 'react-icons/md';
+// import { RiDeleteBin2Line } from 'react-icons/ri';
 import {
   ContactSetUnit,
   ContactInfo,
-  // ContactName,
-  // ContactNumber,
   DeleteButton,
   StyledEdiText,
 } from './ContactListItem.styled';
 import {
   deleteContact,
   changeContactName,
-  changeContactNumber
+  changeContactNumber,
 } from "redux/contacts/contacts-operations";
 
 export const ContactListItem = ({
@@ -30,6 +29,7 @@ export const ContactListItem = ({
     setNameValue(value);
     dispatch(changeContactName({ id, value }));
   };
+
   const handleSaveNumber = id => value => {
     if (value === number) return;
     setNumberValue(value);
@@ -41,19 +41,38 @@ export const ContactListItem = ({
     toast.success(`"${name}" deleted from contacts!`);  
   };
 
+  const validateName = value => {
+    const pattern =
+      /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+    return value.trim() !== '' && pattern.test(value);
+  };
+
+  const validateNumber = value => {
+    const pattern =
+      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/;
+    return value.trim() !== '' && pattern.test(value);
+  };
+
+  const validateNameFailed = () => toast.info('Name may contain only letters, apostrophe, dash and spaces');
+  const validateNumberFailed = () => toast.info('Phone number must be digits and can contain spaces, dashes, parentheses and can start with +');
+
   return (
     <ContactSetUnit>
       <MdContactPhone style={{ width: 48, height: 48, marginRight: '10px' }} />
       <ContactInfo>        
-        {/* <b>{name}:</b> {number} */}
-        {/* <ContactName>{name}</ContactName>
-        <ContactNumber>{number}</ContactNumber> */}
         <b>
           <StyledEdiText
-          type="text"
-          value={nameValue}
-          onSave={handleSaveName(id)}
-          showButtonsOnHover
+            type="text"
+            value={nameValue}
+            onSave={handleSaveName(id)}
+            showButtonsOnHover
+            cancelOnUnfocus
+            submitOnEnter
+            cancelOnEscape
+            validation={validateName}
+            // validation={val => val.trim() !== ''}
+            onValidationFail={validateNameFailed} 
+            // validation={val => val.length > 0}                       
           />
         </b>
         <StyledEdiText
@@ -61,10 +80,17 @@ export const ContactListItem = ({
           value={numberValue}
           onSave={handleSaveNumber(id)}
           showButtonsOnHover
-            />
+          cancelOnUnfocus
+          submitOnEnter
+          cancelOnEscape
+          validation={validateNumber}
+          onValidationFail={validateNumberFailed}
+          // validation={val => val.length > 0}
+        />
       </ContactInfo>
       <DeleteButton type="button" onClick={() => onDeleteContact(id)}>
-        Delete
+        {/* Delete */}
+        <MdClose style={{ width: 40, height: 40 }} />
       </DeleteButton>
     </ContactSetUnit>
   );

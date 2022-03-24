@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
+// import toast from 'react-hot-toast';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { MdPerson, MdPhone } from 'react-icons/md';
 import { Form, FormLabel, SearchInput, FormButton } from './ContactForm.styled';
 import { getContacts } from 'redux/contacts/contacts-selectors';
@@ -35,7 +37,7 @@ export const ContactForm = () => {
     event.preventDefault();
 
     if (name === '' || number === '') {
-      return toast.error('Please, fill in all fields!');
+      return toast.warn('Please, fill in all fields!');
     }
 
     const existingContacts = contacts.find(
@@ -43,7 +45,7 @@ export const ContactForm = () => {
     );
 
     if (existingContacts) {
-      toast.error(`"${name}" is already in contacts!`);
+      toast.warn(`"${name}" is already in contacts!`);
       resetForm();
       return;
     }

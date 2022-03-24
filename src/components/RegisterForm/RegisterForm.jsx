@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
+// import toast from 'react-hot-toast';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { MdPerson, MdEmail, MdPassword } from 'react-icons/md';
 import { Form, FormLabel, SearchInput, FormButton } from './RegisterForm.styled';
 import { register } from 'redux/auth/auth-operations';
@@ -38,11 +40,10 @@ export const RegisterForm = () => {
     event.preventDefault();
 
     if (name === '' || email === '' || password === '') {
-      return toast.error('Please, fill in all fields!');
+      return toast.warn('Please, fill in all fields!');
     }
     
-    dispatch(register({ name, email, password }));
-    toast.success('You successfully signed up!');  
+    dispatch(register({ name, email, password }));  
     resetForm();
   };
 

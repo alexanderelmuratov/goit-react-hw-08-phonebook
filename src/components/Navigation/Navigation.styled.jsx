@@ -1,6 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
 
+export const StyledNav = styled.nav`
+  display: flex;
+  align-items: center;
+`;
+
 export const StyledNavLink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
