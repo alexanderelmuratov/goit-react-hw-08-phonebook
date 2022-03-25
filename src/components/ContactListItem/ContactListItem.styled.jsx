@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import EdiText from 'react-editext';
 
 export const ContactSetUnit = styled.li`
+  position: relative;
   display: flex;
   align-items: center;
   color: #034f84;  
@@ -38,12 +39,15 @@ export const ContactInfo = styled.div`
 // `;
 
 export const DeleteButton = styled.button`
+  position: absolute;
+  right: 10px;
   display: flex;
   justify-content: center;
   alight-items: center;
   /* width: 40px;
   height: 40px; */
-  margin-left: auto;
+  /* margin-left: auto; */
+  /* margin-right: 5px; */
   padding: 0;
   /* padding-top: 5px; */
   /* padding-bottom: 5px; */

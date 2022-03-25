@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // import { Toaster } from 'react-hot-toast';
 import { ToastContainer } from 'react-toastify';
 import { AppBar } from 'components/AppBar/AppBar';
+import { AppFooter } from 'components/AppFooter/AppFooter';
 import { PublicRoute } from 'components/PublicRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { GlobalStyle } from './GlobalStyle';
@@ -12,7 +13,7 @@ import { Container } from './App.styled';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import { getIsFetchingCurrentUser } from 'redux/auth/auth-selectors';
 import 'react-toastify/dist/ReactToastify.css';
-// import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loader';
 
 const HomePage = lazy(() =>
   import('../../pages/HomePage').then(module => ({ default: module.HomePage }))
@@ -59,7 +60,7 @@ export const App = () => {
         {!isFetchingCurrentUser && (
           <>
             <AppBar />
-            <Suspense fallback="">
+            <Suspense fallback={<Loader />}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/contacts" element={<PrivateRoute />}>
@@ -74,6 +75,7 @@ export const App = () => {
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </Suspense>
+            <AppFooter />
           </>
         )}
         

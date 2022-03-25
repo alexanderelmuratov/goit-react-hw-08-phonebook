@@ -9,14 +9,14 @@ export const ContactList = () => {
   return (
     contacts.length !== 0
       ? (
-        <ContactSet>
+        <ContactSet>          
           {contacts.map(contact => (
             <ContactListItem
               key={contact.id}
               contact={contact}
             />
-          ))}
-        </ContactSet>
+          ))}           
+        </ContactSet >       
       )
       : <ContactsError>There's no information</ContactsError> 
   );

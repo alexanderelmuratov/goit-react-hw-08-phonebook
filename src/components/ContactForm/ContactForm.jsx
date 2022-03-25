@@ -79,7 +79,7 @@ export const ContactForm = () => {
       </FormLabel>
       <FormLabel>
         <MdPhone style={{ width: 23, height: 23, marginRight: '5px' }} />  
-        Number        
+        Phone number        
         <SearchInput
           type="tel"
           name="number"

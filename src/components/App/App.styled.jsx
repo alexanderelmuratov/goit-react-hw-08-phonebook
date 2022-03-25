@@ -5,9 +5,13 @@ export const Container = styled.div`
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   /* padding-left: 15px;
   padding-right: 15px; */
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   background-color: #EDF1FF;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 `;
