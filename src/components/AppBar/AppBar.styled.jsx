@@ -10,5 +10,6 @@ export const NavHeader = styled.header`
   padding-left: 40px;
   padding-right: 40px;
   background-color: #e5e5e5;
+  /* background-color: #c0c0c0; */
   border-bottom: 1px solid #2a363b;
 `;

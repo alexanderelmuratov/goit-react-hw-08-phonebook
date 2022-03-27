@@ -1,10 +1,14 @@
-import { Title, SubTitle } from 'components/App/App.styled';
+import { HomePageTitle, SubTitle, HomePageWrapper } from 'components/App/App.styled';
 
 export const HomePage = () => {
   return (
     <main>
-      <Title>Welcome to Phonebook</Title>
-      <SubTitle>Create your personal contact database with a handy search feature!</SubTitle>
+      <HomePageWrapper>
+        <HomePageTitle>Welcome to Phonebook</HomePageTitle>
+        <SubTitle>Create</SubTitle>
+        <SubTitle>your personal contact database</SubTitle>
+        <SubTitle>with a handy search feature</SubTitle>
+      </HomePageWrapper>
     </main>
   );
 };

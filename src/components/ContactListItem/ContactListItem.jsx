@@ -10,6 +10,7 @@ import {
   ContactInfo,
   DeleteButton,
   StyledEdiText,
+  StyledEdiTextName,
 } from './ContactListItem.styled';
 import {
   deleteContact,
@@ -59,22 +60,18 @@ export const ContactListItem = ({
   return (
     <ContactSetUnit>
       <MdContactPhone style={{ width: 48, height: 48, marginRight: '10px' }} />
-      <ContactInfo>        
-        <b>
-          <StyledEdiText
-            type="text"
-            value={nameValue}
-            onSave={handleSaveName(id)}
-            showButtonsOnHover
-            cancelOnUnfocus
-            submitOnEnter
-            cancelOnEscape
-            validation={validateName}
-            // validation={val => val.trim() !== ''}
-            onValidationFail={validateNameFailed} 
-            // validation={val => val.length > 0}                       
-          />
-        </b>
+      <ContactInfo>
+        <StyledEdiTextName
+          type="text"
+          value={nameValue}
+          onSave={handleSaveName(id)}
+          showButtonsOnHover
+          cancelOnUnfocus
+          submitOnEnter
+          cancelOnEscape
+          validation={validateName}
+          onValidationFail={validateNameFailed}
+        />
         <StyledEdiText
           type="tel"
           value={numberValue}
@@ -85,11 +82,9 @@ export const ContactListItem = ({
           cancelOnEscape
           validation={validateNumber}
           onValidationFail={validateNumberFailed}
-          // validation={val => val.length > 0}
         />
       </ContactInfo>
       <DeleteButton type="button" onClick={() => onDeleteContact(id)}>
-        {/* Delete */}
         <MdClose style={{ width: 40, height: 40 }} />
       </DeleteButton>
     </ContactSetUnit>

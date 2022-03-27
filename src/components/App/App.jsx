@@ -80,7 +80,7 @@ export const App = () => {
         )}
         
       </Container>
-      <ToastContainer style={{ fontSize: "18px" }} />
+      <ToastContainer newestOnTop style={{ fontSize: "18px" }} />
       {/* <ToastContainer style={{ fontSize: "18px", fontStyle: "italic" }} /> */}
     </>    
   );

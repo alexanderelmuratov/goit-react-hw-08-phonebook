@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultBgImage from './phonebook.jpg';
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -22,16 +23,38 @@ export const Title = styled.h1`
   line-height: 1.5;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
+export const HomePageTitle = styled(Title)`
+  font-size: 40px;
+  color: rgb(196, 58, 49);
 `;
 
 export const SubTitle = styled.h2`
   font-style: italic;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 1.5;
   text-align: center;
+  color: teal;
   /* text-transform: uppercase; */
-  /* margin-bottom: 10px; */
+  /* padding-bottom: auto; */
 `;
+
+export const HomePageWrapper = styled.div`
+  /* display: flex; */
+  /* width: 100%; */
+  /* margin: 0 auto; */
+  min-height: 797px;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-image: linear-gradient(rgba(47, 48, 58, 0.2), rgba(47, 48, 58, 0.2)), url(${defaultBgImage}); */
+  background-image: linear-gradient(rgba(134, 160, 180, 0.5), rgba(134, 160, 180, 0.5)), url(${defaultBgImage});
+`;
+
+
+// color: rgb(196, 58, 49);

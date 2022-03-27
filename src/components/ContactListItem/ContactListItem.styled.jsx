@@ -5,7 +5,8 @@ export const ContactSetUnit = styled.li`
   position: relative;
   display: flex;
   align-items: center;
-  color: #034f84;  
+  color: #034f84;
+  /* color: silver;   */
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 
   &:hover {    
@@ -140,3 +141,7 @@ export const StyledEdiText = styled(EdiText)`
     /* color: #fff; */
 }
 `
+
+export const StyledEdiTextName = styled(StyledEdiText)`
+  font-weight: 700;
+`;
