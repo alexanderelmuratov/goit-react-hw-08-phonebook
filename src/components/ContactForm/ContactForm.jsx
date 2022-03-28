@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from 'react-toastify';
-// import toast from 'react-hot-toast';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { MdPerson, MdPhone } from 'react-icons/md';
 import { Form, FormLabel, SearchInput, FormButton } from './ContactForm.styled';
 import { getContacts } from 'redux/contacts/contacts-selectors';
@@ -62,7 +60,6 @@ export const ContactForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {/* <FieldWrapper> */}
       <FormLabel>
         <MdPerson style={{ width: 23, height: 23, marginRight: '5px' }} />
         Name        
@@ -88,10 +85,8 @@ export const ContactForm = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           autoComplete="off"
-          // autoFocus
         />
       </FormLabel>
-      {/* </FieldWrapper> */}
       <FormButton type="submit">Add contact</FormButton>
     </Form>
   );

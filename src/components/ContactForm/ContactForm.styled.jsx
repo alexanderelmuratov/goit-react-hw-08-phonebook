@@ -12,11 +12,6 @@ export const Form = styled.form`
   border-radius: 5px;
 `;
 
-// export const FieldWrapper = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-// `;
-
 export const FormLabel = styled.label`
   display: flex;
   flex-wrap: wrap;
@@ -34,8 +29,6 @@ export const SearchInput = styled.input`
   border: none;
   outline: none;
   padding: 5px;
-  /* padding-left: 4px;
-  padding-right: 4px; */
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 `;
 

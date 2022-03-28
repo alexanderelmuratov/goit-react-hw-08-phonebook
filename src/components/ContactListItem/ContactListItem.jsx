@@ -2,9 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
 import { toast } from 'react-toastify';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { MdClose, MdContactPhone } from 'react-icons/md';
-// import { RiDeleteBin2Line } from 'react-icons/ri';
 import {
   ContactSetUnit,
   ContactInfo,
@@ -39,7 +37,7 @@ export const ContactListItem = ({
 
   const onDeleteContact = id => {
     dispatch(deleteContact(id));
-    toast.success(`"${name}" deleted from contacts!`);  
+    toast.info(`"${name}" deleted from contacts!`);  
   };
 
   const validateName = value => {
@@ -94,42 +92,3 @@ export const ContactListItem = ({
 ContactListItem.propTypes = {
   contact: PropTypes.objectOf(PropTypes.string.isRequired),
 };
-
-
-// ==========================================
-// import PropTypes from 'prop-types';
-// import { useDispatch } from "react-redux";
-// import toast from 'react-hot-toast';
-// import { MdContactPhone } from 'react-icons/md';
-// import {
-//   ContactSetUnit,
-//   ContactInfo,
-//   DeleteButton,
-// } from './ContactListItem.styled';
-// import { deleteContact } from "redux/contacts/contacts-operations";
-
-// export const ContactListItem = ({
-//   contact: { id, name, number },
-// }) => {
-//   const dispatch = useDispatch();
-//   const onDeleteContact = id => {
-//     dispatch(deleteContact(id));
-//     toast.success(`"${name}" deleted from contacts!`);  
-//   };
-
-//   return (
-//     <ContactSetUnit>
-//       <MdContactPhone style={{ width: 25, height: 25, marginRight: '10px' }} />
-//       <ContactInfo>
-//         <b>{name}:</b> {number}
-//       </ContactInfo>
-//       <DeleteButton type="button" onClick={() => onDeleteContact(id)}>
-//         Delete
-//       </DeleteButton>
-//     </ContactSetUnit>
-//   );
-// }
-
-// ContactListItem.propTypes = {
-//   contact: PropTypes.objectOf(PropTypes.string.isRequired),
-// };

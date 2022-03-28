@@ -1,17 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-// import toast from 'react-hot-toast';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { MdEmail, MdPassword } from 'react-icons/md';
 import { Form, FormLabel, SearchInput, FormButton } from './LoginForm.styled';
 import { logIn } from 'redux/auth/auth-operations';
-// import { getError } from 'redux/auth/auth-selectors';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const error = useSelector(getError);
   const dispatch = useDispatch();
 
   const handleChange = event => {
@@ -40,12 +36,7 @@ export const LoginForm = () => {
       return toast.warn('Please, fill in all fields!');
     }
 
-    // if (error) {
-    //   return;
-    // }
-
     dispatch(logIn({ email, password }));
-    // toast.success('You successfully logged in!');  
     resetForm();
   };
 
@@ -72,7 +63,6 @@ export const LoginForm = () => {
           value={password}
           onChange={handleChange}
           autoComplete="off"
-          // autoFocus
         />
       </FormLabel>
       <FormButton type="submit">Enter</FormButton>
