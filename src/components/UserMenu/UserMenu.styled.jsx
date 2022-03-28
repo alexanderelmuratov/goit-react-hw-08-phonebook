@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const UserMenuWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-left: auto;
 `;
 
 export const UserMenuImg = styled.img`
@@ -19,7 +20,6 @@ export const UserMenuButton = styled.button`
   width: 80px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-left: auto;
   font-family: inherit;
   font-weight: 400;
   font-size: 18px;

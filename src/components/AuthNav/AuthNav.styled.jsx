@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import styled from "styled-components";
 
+export const StyledAuthNav = styled.div`
+  margin-left: auto;
+`;
+
 export const StyledNavLink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;

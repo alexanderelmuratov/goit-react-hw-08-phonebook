@@ -4,6 +4,11 @@ import styled from "styled-components";
 export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const StyledNavLink = styled(NavLink)`
