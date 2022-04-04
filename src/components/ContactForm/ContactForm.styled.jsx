@@ -33,7 +33,7 @@ export const SearchInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-  width: 140px;
+  width: 144px;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-top: 5px;
