@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-// import { authSelectors, authOperations } from '../../redux/auth';
+import { GiExitDoor } from 'react-icons/gi';
 import {
   UserMenuWrapper,
   UserMenuImg,
@@ -19,7 +19,9 @@ export const UserMenu = () => {
     <UserMenuWrapper>
       <UserMenuImg src={avatar} alt="Avatar" width="40" />
       <UserMenuText>Hello, {name}!</UserMenuText>
-      <UserMenuButton type="button" onClick={() => dispatch(logOut())}>Logout</UserMenuButton>
+      <UserMenuButton type="button" onClick={() => dispatch(logOut())}>
+        <GiExitDoor style={{ width: 40, height: 40 }} />
+      </UserMenuButton>
     </UserMenuWrapper>
   );
 };

@@ -17,9 +17,10 @@ export const UserMenuText = styled.span`
 `;
 
 export const UserMenuButton = styled.button`
-  width: 80px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
   font-family: inherit;
   font-weight: 400;
   font-size: 18px;
@@ -34,7 +35,7 @@ export const UserMenuButton = styled.button`
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 
   &:hover {
-    font-weight: 700;
     background-color: #F2552C;
+    transform: scale(1.1);
   }
 `;

@@ -30,9 +30,8 @@ export const DeleteButton = styled.button`
   right: 10px;
   display: flex;
   justify-content: center;
-  alight-items: center;
   padding: 0;
-  color: #fff;
+  color: #faf9dd;
   background-color: #034f84;
   border: none;
   border-radius: 50%;
@@ -42,7 +41,6 @@ export const DeleteButton = styled.button`
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 
   &:hover {
-    font-weight: 700;
     background-color: #F2552C;
     transform: scale(1.1);
   }
